@@ -27,7 +27,7 @@ export default class HogsBrowser extends React.Component{
         } else if (this.state.filter === ""){
             filter = this.state.hogs
         } else if (this.state.filter === "weight"){
-            filter = this.state.hogs.sort((hogA, hogB) => {
+            filter = [ ...this.state.hogs ].sort((hogA, hogB) => {
                 if(hogA.weight > hogB.weight){
                     return +1
                 } else {
@@ -35,7 +35,7 @@ export default class HogsBrowser extends React.Component{
                 }
             })
         } else if (this.state.filter === "name"){
-            filter = this.state.hogs.sort((hogA, hogB) => {
+            filter = [ ...this.state.hogs ].sort((hogA, hogB) => {
                 if(hogA.name > hogB.name){
                     return +1
                 } else {
